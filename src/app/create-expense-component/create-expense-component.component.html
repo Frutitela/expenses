@@ -1,0 +1,12 @@
+<div>
+  <div>
+    <input type="text" [(ngModel)]="this.expenseInput">
+    <button (click)="addExpense()">Add Expense</button>
+    <section>
+      <input type="text" placeholder="">
+    </section>
+    <ul>
+      <li *ngFor="let expense of expenses">{{expense}}</li>
+    </ul>
+  </div>
+</div>
