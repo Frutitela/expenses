@@ -1,0 +1,25 @@
+@import "../../variables";
+
+.create-expense--form {
+  background-color: $second-color;
+  display: flow-root;
+  max-width: 400px;
+  padding: 20px;
+  width: 100%;
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  .create-expense--half-form-field {
+    width: 45%;
+  }
+
+  .create-expense--margin-right {
+    margin-right: 10%;
+  }
+
+  button {
+    float: right;
+  }
+}

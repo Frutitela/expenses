@@ -1,0 +1,33 @@
+$field-width: calc(100% / 5);
+
+.table-wrapper {
+  padding: 30px 0;
+}
+
+.table-headers {
+  display: flow-root;
+  width: 100%;
+  
+  li {
+    display: block;
+    float: left;
+    order: 1;
+    width: $field-width;
+  }
+}
+
+.table-row {
+  display: table;
+  width: 100%;
+
+  li {
+    display: table-cell;
+    font-size: .8em;
+    width: $field-width;
+  }
+
+  i {
+    cursor: pointer;
+  }
+}
+

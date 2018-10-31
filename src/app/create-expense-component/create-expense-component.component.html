@@ -1,12 +1,27 @@
-<div>
-  <div>
-    <input type="text" [(ngModel)]="this.expenseInput">
-    <button (click)="addExpense()">Add Expense</button>
-    <section>
-      <input type="text" placeholder="">
-    </section>
-    <ul>
-      <li *ngFor="let expense of expenses">{{expense}}</li>
-    </ul>
-  </div>
+<div class="create-expense--form mat-elevation-z6">
+  <mat-form-field>
+    <input matInput
+           placeholder="Expense title" [(ngModel)]="title"/>
+  </mat-form-field>
+  <mat-form-field
+    class="create-expense--half-form-field
+    create-expense--margin-right">
+    <input matInput
+           [(ngModel)]="amount"
+           placeholder="Expense amount"
+           type="number"/>
+  </mat-form-field>
+  <mat-form-field class="create-expense--half-form-field">
+    <input matInput
+           [(ngModel)]="date"
+           placeholder="Date"
+           type="date"/>
+  </mat-form-field>
+  <mat-form-field>
+    <textarea matInput
+              [(ngModel)]="details"
+              placeholder="Comments"></textarea>
+  </mat-form-field>
+  <button (click)="addExpense()"
+          mat-raised-button>Click me!</button>
 </div>

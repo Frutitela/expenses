@@ -1,6 +1,7 @@
+@import "../variables";
+
 main {
-  background-color: slategray;
-  color: #fff;
+  color: $third-color;
   display: flow-root;
   font-family: Arial, serif;
   font-size: 18px;
@@ -10,5 +11,13 @@ main {
 
 h1 {
   font-size: 2em;
-  letter-spacing: .1em;
+}
+
+app-create-expense-component {
+  float: left;
+}
+
+app-table-component {
+  float: left;
+  width: calc(100% - 400px);
 }

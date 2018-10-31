@@ -3,20 +3,25 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CreateExpenseComponentComponent } from './create-expense-component/create-expense-component.component';
-import {FormsModule} from '@angular/forms';
+import { CreateExpenseComponent } from './create-expense-component/create-expense-component.component';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule, MatButtonModule } from '@angular/material';
+import { TableComponent } from './table-component/table-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CreateExpenseComponentComponent,
+    CreateExpenseComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    MatInputModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
