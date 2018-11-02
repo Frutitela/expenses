@@ -1,11 +1,18 @@
 $field-width: calc(100% / 5);
 
 .table-wrapper {
-  padding: 30px 0;
+  padding: 0 30px;
+}
+
+.table-content {
+  height: 215px;
+  margin-bottom: 15px;
+  overflow-y: auto;
 }
 
 .table-headers {
   display: flow-root;
+  padding-top: 20px;
   width: 100%;
   
   li {
@@ -30,4 +37,3 @@ $field-width: calc(100% / 5);
     cursor: pointer;
   }
 }
-

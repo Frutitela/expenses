@@ -1,6 +1,14 @@
 import {Component, OnInit} from '@angular/core';
 import { DataService } from '../data.service';
 
+export interface Expense {
+  title: string;
+  amount: number;
+  date: string;
+  details: string;
+}
+
+
 @Component({
   selector: 'app-create-expense-component',
   templateUrl: './create-expense-component.component.html',
@@ -11,8 +19,8 @@ export class CreateExpenseComponent implements OnInit {
   amount = 0;
   date: string;
   details: string;
-  expense: object;
-  expenseList: object[] = [];
+  expense: Expense;
+  expenseList: Expense[] = [];
   constructor(private data: DataService) {}
 
   ngOnInit() {
@@ -30,6 +38,5 @@ export class CreateExpenseComponent implements OnInit {
     };
     this.expenseList.push(this.expense);
     this.data.changeMessage(this.expenseList);
-    console.log(this.expenseList);
   }
 }

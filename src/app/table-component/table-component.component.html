@@ -1,21 +1,24 @@
 <div class="table-wrapper">
-  <h2>Expenses</h2>
+  <h2>Money available: {{availableMoney | currency}}</h2>
+  <h2 (click)="getTotalMonthAmount()">Total month expenses: {{monthExpenses | currency}}</h2>
+  <h2>Expenses of {{getCurrentMonth()}}</h2>
   <div class="expenses-list">
     <ul class="table-headers">
       <li *ngFor="let title of titles">{{title}}</li>
     </ul>
-  </div>
-  <div class="table-content">
-    <ul class="table-row"
-        *ngFor="let text of dataSource; let index = index;">
-      <li>{{text.title}}</li>
-      <li>{{text.amount | currency}}</li>
-      <li>{{text.date | date}}</li>
-      <li>{{text.details}}</li>
-      <li>
-        <i class="material-icons"
-           (click)="removeExpense(index)">delete_forever</i>
-      </li>
-    </ul>
+    <div class="table-content">
+      <ul class="table-row"
+          *ngFor="let text of dataSource; let index = index;">
+        <li>{{text.title}}</li>
+        <li>{{text.amount | currency}}</li>
+        <li>{{text.date | date}}</li>
+        <li>{{text.details}}</li>
+        <li>
+          <i class="material-icons"
+             (click)="sumToAvailableMoney(index);
+             removeExpense(index);">delete_forever</i>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
