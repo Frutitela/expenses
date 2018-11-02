@@ -1,8 +1,12 @@
 <div class="table-wrapper">
-  <h2>Money available: {{availableMoney | currency}}</h2>
-  <h2 (click)="getTotalMonthAmount()">Total month expenses: {{monthExpenses | currency}}</h2>
-  <h2>Expenses of {{getCurrentMonth()}}</h2>
+  <h2>Money available:
+    <span>{{availableMoney | currency}}</span>
+  </h2>
+  <h2 (click)="getTotalMonthAmount()">Total month expenses:
+    <span>{{monthExpenses | currency}}</span>
+  </h2>
   <div class="expenses-list">
+  <h3>Expenses of {{getCurrentMonth()}}</h3>
     <ul class="table-headers">
       <li *ngFor="let title of titles">{{title}}</li>
     </ul>
