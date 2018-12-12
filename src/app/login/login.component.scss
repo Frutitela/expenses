@@ -1,0 +1,61 @@
+@import "../../variables";
+
+.welcome-display {
+    background-color: $main-color;
+    float: left;
+    min-height: 100vh;
+    position: relative;
+    width: 65%;
+
+    h1 {
+        bottom: 0;
+        font-size: 3em;
+        height: 120px;
+        left: 0;
+        margin: auto;
+        right: 0;
+        position: absolute;
+        top: 0;
+        width: 90%;
+    }
+}
+
+.form-wrapper {
+    background-color: $third-color;
+    float: right;
+    min-height: 100vh;
+    position: relative;
+    width: 35%;
+
+    h2 {
+        color: $contrast-color;
+        padding-bottom: 20px;
+    }
+
+    form {
+        bottom: 0;
+        height: 200px;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 80%;
+
+        mat-form-field {
+            width: 100%;
+        }
+
+        .mat-input-element {
+            caret-color: $contrast-color;
+            color: $contrast-color;
+        }
+
+        button {
+            background-color: $contrast-color;
+            color: $third-color;
+            display: flex;
+            margin: auto;
+        }
+    }
+}
