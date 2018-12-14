@@ -1,4 +1,4 @@
-<section>
+<section *ngIf="!logged">
   <div class="welcome-display">
     <h1>Welcome to Expense Manager</h1>
   </div>
@@ -14,7 +14,9 @@
                  placeholder="Password" [(ngModel)]="password" 
                  type="password"/>
         </mat-form-field>
-        <button mat-raised-button	>Enter</button>
+        <button (click)="isLogged()"
+                mat-raised-button	
+                routerLink="/main-content">Enter</button>
     </form>
   </div>
 </section>

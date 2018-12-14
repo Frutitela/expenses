@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
 export class LoginComponent {
   user = '';
   password = '';
+  logged = false;
   constructor() { }
+
+  isLogged() {
+    this.logged = true;
+  }
 }
