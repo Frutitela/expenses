@@ -1,6 +1,6 @@
 <div class="table-wrapper">
   <h2>Money available:
-    <span>{{availableMoney | currency}}</span>
+    <span [class.negative-numbers]="availableMoney < 0">{{availableMoney | currency}}</span>
   </h2>
   <h2 (click)="getTotalMonthAmount()">Total month expenses:
     <span>{{monthExpenses | currency}}</span>
