@@ -1,0 +1,26 @@
+<section *ngIf="!logged">
+  <div class="welcome-display">
+    <h1>Welcome to Expense Manager</h1>
+  </div>
+  <div class="form-wrapper">
+    <form action="" method="post">
+      <h2>Login to your account</h2>
+      <mat-form-field>
+        <input matInput
+               placeholder="User name"
+               name="user"
+               [(ngModel)]="user"/>
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput
+                 name="password"
+                 [(ngModel)]="password"
+                 placeholder="Password" 
+                 type="password"/>
+        </mat-form-field>
+        <button (click)="isLogged()"
+                mat-raised-button	
+                routerLink="/main-content">Enter</button>
+    </form>
+  </div>
+</section>
