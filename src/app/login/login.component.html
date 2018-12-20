@@ -7,11 +7,15 @@
       <h2>Login to your account</h2>
       <mat-form-field>
         <input matInput
-               placeholder="User name" [(ngModel)]="user"/>
+               placeholder="User name"
+               name="user"
+               [(ngModel)]="user"/>
       </mat-form-field>
       <mat-form-field>
           <input matInput
-                 placeholder="Password" [(ngModel)]="password" 
+                 name="password"
+                 [(ngModel)]="password"
+                 placeholder="Password" 
                  type="password"/>
         </mat-form-field>
         <button (click)="isLogged()"

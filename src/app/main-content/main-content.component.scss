@@ -5,7 +5,7 @@ main {
   display: flow-root;
   font-family: Arial, serif;
   font-size: 18px;
-  min-height: 100vh;
+  min-height: calc(100vh - 40px);
   padding: 20px;
 }
 
