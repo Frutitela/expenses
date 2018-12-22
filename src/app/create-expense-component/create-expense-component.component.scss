@@ -23,3 +23,56 @@
     float: right;
   }
 }
+
+.expense-type-menu {
+  padding-bottom: 1.25em;
+  position: relative;
+
+  span {
+    border-bottom: 1px solid $material-form-color;
+    color: $material-form-color;
+    cursor: pointer;
+    display: flex;
+    padding: 1.2em 0 .4375em;
+    width: 100%;
+  }
+
+  ul {
+    background-color: $third-color;
+    color: $main-color;
+    position: absolute;
+    top: calc(100% - 1.25em);
+    width: 100%;
+    z-index: 1;
+
+    li {
+      &:first-child {
+        color: $contrast-color;
+      }
+      button {
+        border-radius: 0;
+        box-shadow: none;
+        color: inherit;
+        text-align: left;
+        width: 100%;
+
+        &:hover {
+          background-color: rgb(216, 216, 216);
+        }
+      }
+    }
+  }
+
+  &.selected {
+    span {
+      color: $third-color;
+    }
+
+    &:before {
+      content: 'Expense type';
+      color: $material-form-color;
+      font-size: 0.73em;
+      position: absolute;
+    }
+  }
+}

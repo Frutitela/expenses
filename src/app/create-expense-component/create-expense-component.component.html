@@ -17,6 +17,20 @@
            placeholder="Date"
            type="date"/>
   </mat-form-field>
+  <div class="expense-type-menu" 
+       [class.selected]="expenseTypeMenuSelected">
+    <span (click)="showMenu()">{{expenseTypeLabel}}</span>
+    <ul class="mat-elevation-z6"
+        *ngIf="showExpenseTypeMenu">
+      <li>
+        <button mat-raised-button>+ Add expense type</button>
+      </li>
+      <li *ngFor="let type of expenseType">
+        <button mat-raised-button 
+                (click)="getListValue(type.value)">{{type.label}}</button>
+      </li>
+    </ul>
+  </div>
   <mat-form-field>
     <textarea matInput
               [(ngModel)]="details"

@@ -8,6 +8,10 @@ export interface Expense {
   details: string;
 }
 
+export interface ExpenseType {
+  label: string;
+  value: string;
+}
 
 @Component({
   selector: 'app-create-expense-component',
@@ -21,15 +25,36 @@ export class CreateExpenseComponent implements OnInit {
   details: string;
   expense: Expense;
   expenseList: Expense[] = [];
+  expenseTypeLabel = 'Expense Type';
+  showExpenseTypeMenu = false;
+  expenseTypeMenuSelected = false;
+  expenseType: ExpenseType[] = [
+    {
+      label: 'FOOD',
+      value: 'food',
+    },
+    {
+      label: 'HOME',
+      value: 'home',
+    },
+    {
+      label: 'ENTRETAINMENT',
+      value: 'entretainment',
+    },
+    {
+      label: 'CARE',
+      value: 'care',
+    },
+  ];
   constructor(private data: DataService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.data.expensesMessage.subscribe(
       message => this.expenseList = message
     );
   }
 
-  addExpense() {
+  addExpense(): void {
     this.expense = {
       title: this.title || '',
       amount: this.amount || 0,
@@ -38,5 +63,15 @@ export class CreateExpenseComponent implements OnInit {
     };
     this.expenseList.push(this.expense);
     this.data.changeMessage(this.expenseList);
+  }
+
+  getListValue(label: string): void {
+    this.expenseTypeLabel = label;
+    this.showExpenseTypeMenu = false;
+    this.expenseTypeMenuSelected = true;
+  }
+
+  showMenu(): void {
+    this.showExpenseTypeMenu = true;
   }
 }
