@@ -5,6 +5,7 @@ export interface Expense {
   title: string;
   amount: number;
   date: string;
+  type: string;
   details: string;
 }
 
@@ -26,23 +27,24 @@ export class CreateExpenseComponent implements OnInit {
   expense: Expense;
   expenseList: Expense[] = [];
   expenseTypeLabel = 'Expense Type';
+  type: string;
   showExpenseTypeMenu = false;
   expenseTypeMenuSelected = false;
   expenseType: ExpenseType[] = [
     {
-      label: 'FOOD',
+      label: 'Food',
       value: 'food',
     },
     {
-      label: 'HOME',
+      label: 'Home',
       value: 'home',
     },
     {
-      label: 'ENTRETAINMENT',
+      label: 'Entretainment',
       value: 'entretainment',
     },
     {
-      label: 'CARE',
+      label: 'Care',
       value: 'care',
     },
   ];
@@ -59,14 +61,16 @@ export class CreateExpenseComponent implements OnInit {
       title: this.title || '',
       amount: this.amount || 0,
       date: this.date || '',
+      type: this.type || '',
       details: this.details || '',
     };
     this.expenseList.push(this.expense);
     this.data.changeMessage(this.expenseList);
   }
 
-  getListValue(label: string): void {
-    this.expenseTypeLabel = label;
+  getListValue(typeData: ExpenseType): void {
+    this.expenseTypeLabel = typeData.label;
+    this.type = typeData.value;
     this.showExpenseTypeMenu = false;
     this.expenseTypeMenuSelected = true;
   }
