@@ -15,7 +15,7 @@ const CURRENT_MONTH = [
 export class TableComponent implements OnInit {
   dataSource: Expense[];
   titles: string[] =
-    ['Title', 'Amount', 'Date', 'Details'];
+    [ 'Title', 'Amount', 'Date', 'Type', 'Comments', ];
   availableMoney = 25000;
   monthExpenses = 0;
   constructor(private data: DataService) { }
