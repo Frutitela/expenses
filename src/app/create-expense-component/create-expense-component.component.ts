@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import { DataService } from '../data.service';
+import {DataService} from '../data.service';
 
 export interface Expense {
   title: string;
@@ -30,6 +30,7 @@ export class CreateExpenseComponent implements OnInit {
   type: string;
   showExpenseTypeMenu = false;
   expenseTypeMenuSelected = false;
+  showAddExpenseInput = false;
   expenseType: ExpenseType[] = [
     {
       label: 'Food',
@@ -48,6 +49,7 @@ export class CreateExpenseComponent implements OnInit {
       value: 'care',
     },
   ];
+  newExpenseType: string;
   constructor(private data: DataService) {}
 
   ngOnInit(): void {
@@ -72,10 +74,31 @@ export class CreateExpenseComponent implements OnInit {
     this.expenseTypeLabel = typeData.label;
     this.type = typeData.value;
     this.showExpenseTypeMenu = false;
+    this.showAddExpenseInput = false;
     this.expenseTypeMenuSelected = true;
   }
 
   showMenu(): void {
     this.showExpenseTypeMenu = true;
+  }
+
+  hideMenu(): void {
+    this.showExpenseTypeMenu = false;
+  }
+
+  showAddExpenseType(): void {
+    this.showAddExpenseInput = true;
+  }
+  addExpenseType() {
+    if (this.newExpenseType) {
+      const newValue = this.newExpenseType.replace(/ /g, '-');
+      this.expenseType.push(
+        {
+          label: this.newExpenseType,
+          value: newValue,
+        }
+      );
+    }
+    this.newExpenseType = '';
   }
 }
