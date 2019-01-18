@@ -23,7 +23,16 @@
     <ul class="mat-elevation-z6"
         *ngIf="showExpenseTypeMenu">
       <li>
-        <button mat-raised-button>+ Add expense type</button>
+        <button mat-raised-button
+                (click)="showAddExpenseType()">+ Add expense type</button>
+      </li>
+      <li *ngIf="showAddExpenseInput">
+        <mat-form-field>
+          <input matInput placeholder="Expense Type Label" type="text"
+                 [(ngModel)]="newExpenseType"/>
+        </mat-form-field>
+        <button class="add-expense-type" mat-raised-button
+                (click)="addExpenseType()">+</button>
       </li>
       <li *ngFor="let type of expenseType">
         <button mat-raised-button 
@@ -39,3 +48,5 @@
   <button (click)="addExpense()"
           mat-raised-button>Click me!</button>
 </div>
+<div class="close-menu-phantom-screen"
+     (click)="hideMenu()" *ngIf="showExpenseTypeMenu"></div>
